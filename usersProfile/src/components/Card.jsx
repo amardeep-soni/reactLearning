@@ -1,13 +1,16 @@
 import { FaEnvelope } from "react-icons/fa";
 import { IoMdCall } from "react-icons/io";
+import { FcLike } from "react-icons/fc";
 import { CiGlobe, CiHeart, CiEdit } from "react-icons/ci";
 import { MdDeleteForever } from "react-icons/md";
 import '.././App.css'
+import { useState } from "react";
 
 
 const Card = (props) => {
-    console.log(props.value);
     const { id, name, email, url, phone, imgurl } = props.value;
+
+    const [isRed, setIsRed] = useState(false)
 
     return (
         <div className="border-2 m-2 border-black w-[250px]">
@@ -30,14 +33,14 @@ const Card = (props) => {
                 </p>
             </div>
             <div className="flex">
-                <p className="bg-slate-200 w-full p-2 center cursor-pointer hover:bg-slate-400">
-                    <CiHeart className="text-xl" />
+                <p className="bg-slate-200 w-full p-2 center cursor-pointer hover:bg-slate-400 text-xl" onClick={() => setIsRed(!isRed)}>
+                    {isRed ? <FcLike /> : <CiHeart />}
                 </p>
-                <p className="bg-slate-200 w-full p-2 center border-l-2 border-r-2 border-slate-400 cursor-pointer hover:bg-slate-400">
-                    <CiEdit className="text-xl" />
+                <p className="bg-slate-200 w-full p-2 center border-l-2 border-r-2 border-slate-400 cursor-pointer hover:bg-slate-400 text-xl">
+                    <CiEdit />
                 </p>
-                <p className="bg-slate-200 w-full p-2 center cursor-pointer hover:bg-slate-400">
-                    <MdDeleteForever className="text-xl" />
+                <p className="bg-slate-200 w-full p-2 center cursor-pointer hover:bg-slate-400 text-xl">
+                    <MdDeleteForever />
                 </p>
             </div>
         </div >
