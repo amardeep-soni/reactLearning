@@ -1,7 +1,9 @@
+import Body from "./components/Body";
+
 export default function App() {
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div className="bg-[#141c2f] h-screen flex justify-center items-center text-white">
+      <Body />
+    </div>
   )
 }
